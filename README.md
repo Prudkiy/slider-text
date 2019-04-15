@@ -7,10 +7,6 @@
 <div class="sliderText" id="slider1">
 
         <div class="sliderText__wrapSliders">
-        
-            <div class="sliderText__block" id="slider1__firstCopy">
-                        
-            </div> 
 
                 <div class="sliderText__block">
                    
@@ -19,21 +15,18 @@
                 <div class="sliderText__block">
                     
                 </div>
-     
-            <div class="sliderText__block" id="slider1__lastCopy">
-                   
-            </div>
 
         </div>
 
         <div class="sliderText__wrapBtn">
+        
             <div class="sliderText__wrapBtn sliderText__wrapBtn--prev">prev</div>
             <div class="sliderText__wrapBtn sliderText__wrapBtn--next">next</div>
+            
         </div>
        
 </div>
 
-Первый слайд есть копией последнего, а последний - копия первого.
 
 СТИЛИ
 
