@@ -1,1 +1,75 @@
-/* this style slider-text 1.1
+/* this style slider-text 1.1 */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i');
+
+$blockWidth: 400px;
+$blockHeight: 300px;
+$heightBtn: 30px;
+
+.sliderText {
+    margin: 0 auto;
+    padding: 0;
+    width: $blockWidth; 
+    height: $blockHeight;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    align-items: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+
+    &__wrapSliders {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    &__block {
+        position: absolute;
+        top: 0;
+        height: $blockHeight;
+        width: $blockWidth;
+        font-family: 'Open Sans', sans-serif;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    &__wrapBtn {
+        display: flex;
+        position: absolute;
+        top: ($blockHeight / 2) - ($heightBtn / 2);
+        left: 0;
+        width: $blockWidth;
+        justify-content: space-between;
+        &> div {
+            width: 50px;
+            height: $heightBtn;
+            background-color: #444444;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-family: 'Open Sans', sans-serif;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: all 0.2s;
+            position: relative;
+            top: 0;
+            outline: none;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+}

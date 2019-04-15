@@ -17,14 +17,16 @@ const config = { // место входа и выхода файлов
     enterFile: { // вход
         html: './src/*.html',
         css: './src/styles/sass/index.scss',
-        js: './src/js/index.js',
-        img: './src/img/**/*'
+        cssWatch: './src/styles/**/*',
+        js: './src/js/**/*.js',
+        img: './src/img/**/*',
+        fonts: './src/fonts'
     },
     exitFile: { // выход
         html: './dist',
         css: './dist/css',
         js: './dist/js',
-        img: './dist/img'
+        img: './dist/img',
     },
     nameFile: { // имена файлов на выходе
         css: 'all',
@@ -82,6 +84,13 @@ function img () {
 
 }
 
+function fonts () {
+
+    return gulp.src(config.enterFile.fonts)
+                    .pipe(gulp.dest(config.exitFile.css))
+
+}
+
 function watch () { 
 
         browserSync.init({
@@ -90,7 +99,7 @@ function watch () {
             }
         });
 
-        gulp.watch (config.enterFile.css, style);
+        gulp.watch (config.enterFile.cssWatch, style);
         gulp.watch (config.enterFile.js, script);
         gulp.watch (config.enterFile.html, html);
 
@@ -104,6 +113,6 @@ gulp.task('style', style);
 gulp.task('script', script);
 gulp.task('watch', watch);
 
-gulp.task('build', gulp.series(clear, gulp.parallel(html, style, script, img))); // в работу
+gulp.task('build', gulp.series(clear, gulp.parallel(html, style, script, img, fonts))); // в работу
 
 gulp.task('dev', gulp.series('build', 'watch')); // разработка
